@@ -3,12 +3,10 @@ package session.ten.application;
 import org.junit.Before;
 import org.junit.Test;
 import session.ten.domain.Ingredient;
+import session.ten.domain.Meal;
 import session.ten.domain.Nutriment;
 import session.ten.domain.NutrimentRepository;
 import session.ten.port.adapter.FakeNutrimentRepository;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -37,12 +35,12 @@ public class MealManagerApplicationServiceTest {
 
     @Test
     public void testAddMeal() throws Exception {
-        List<Nutriment> compositeNutriment = new ArrayList<Nutriment>();
-        compositeNutriment.add(new Ingredient("Pommes", 500));
-        compositeNutriment.add(new Ingredient("Schnitzel", 400));
-        compositeNutriment.add(new Ingredient("Majo", 80));
+        Meal meal = new Meal("Wiener Schnizel");
+        meal.addNutriment(new Ingredient("Pommes", 500));
+        meal.addNutriment(new Ingredient("Schnitzel", 400));
+        meal.addNutriment(new Ingredient("Majo", 80));
 
-        mealManagerApplicationService.addMeal("Wiener Schnizel", compositeNutriment);
+        mealManagerApplicationService.addNutriment(meal);
 
         assertThat(kcalOfNutriments(), equalTo(980));
         assertThat(nameOfFirstNutriments(), equalTo("Wiener Schnizel"));
