@@ -1,4 +1,7 @@
+package session.two;
+
 import junit.framework.TestCase;
+import session.two.Loan;
 
 import java.util.Calendar;
 import java.util.Date;
