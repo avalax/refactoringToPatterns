@@ -1,5 +1,6 @@
 Refactoring to Patterns - Joshua Kerievsky
 =====================
+[![Build Status](https://travis-ci.org/avalax/refactoringToPatterns.png?branch=master)](https://travis-ci.org/avalax/refactoringToPatterns) [![Coverage Status](https://img.shields.io/coveralls/avalax/refactoringToPatterns.svg)](https://coveralls.io/r/avalax/refactoringToPatterns)
 
 A Study Sequence
 Session 2: Replace Conditional Logic with Strategy
